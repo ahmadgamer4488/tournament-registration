@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Punjab College Game Tournament Registration</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png?v=2">
 <style>
   body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0d0f17;
        font-family:system-ui,sans-serif;color:#e8eaf2;padding:20px 0}
@@ -33,7 +33,7 @@
     <label>Email</label>
     <input id="email" type="email" required>
     <label>Institute Roll No</label>
-    <input id="roll" required pattern="[A-Za-z0-9/\-]{3,20}" title="Letters, numbers, / or -">
+    <input id="roll" required pattern="[A-Za-z0-9/\-]{1,20}" title="Letters, numbers, / or -, 1-20 characters">
     <label>Game (choose one)</label>
     <select id="game" required>
       <option value="">Select game</option>
@@ -44,7 +44,7 @@
       <div><label>Kit Size</label>
         <select id="kit" required>
           <option value="">Select</option>
-          <option>Small</option><option>Medium</option><option>Large</option>
+          <option>Small</option><option>Med</option><option>Large</option>
           <option>XL</option><option>2XL</option><option>3XL</option>
         </select></div>
       <div><label>Shoe Size</label>

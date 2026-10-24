@@ -94,7 +94,8 @@ $("f").addEventListener("submit", async (e) => {
       msg.className="warn"; msg.textContent="⚠️ You are already registered. Your saved details are below:";
       showInfo(out.data);
     } else {
-      msg.className="err"; msg.textContent="❌ Please check your details and try again.";
+      const why = Array.isArray(out.errors) ? out.errors.join(", ") : (out.message || "Please check your details and try again.");
+      msg.className="err"; msg.textContent="❌ " + why;
     }
   } catch {
     msg.className="err"; msg.textContent="❌ Server error. Try again later.";

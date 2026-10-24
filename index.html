@@ -32,7 +32,7 @@
     <label>Email</label>
     <input id="email" type="email" required>
     <label>Institute Roll No</label>
-    <input id="roll" required pattern="[A-Za-z0-9/\-]{3,20}" title="Letters, numbers, / or -">
+    <input id="roll" required pattern="[A-Za-z0-9/\-]{1,20}" title="Letters, numbers, / or -">
     <label>Game (choose one)</label>
     <select id="game" required>
       <option value="">Select game</option>
@@ -93,7 +93,8 @@ $("f").addEventListener("submit", async (e) => {
       msg.className="warn"; msg.textContent="⚠️ You are already registered. Your saved details are below:";
       showInfo(out.data);
     } else {
-      msg.className="err"; msg.textContent="❌ Please check your details and try again.";
+      const why = Array.isArray(out.errors) ? out.errors.join(", ") : (out.message || "Unknown error");
+      msg.className="err"; msg.textContent="❌ " + why;
     }
   } catch {
     msg.className="err"; msg.textContent="❌ Server error. Try again later.";
